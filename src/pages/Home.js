@@ -1,4 +1,4 @@
-import { Search } from "../components/Info/Search";
+import Search from "../components/Info/Search";
 
 const Home = () => (
   <>
