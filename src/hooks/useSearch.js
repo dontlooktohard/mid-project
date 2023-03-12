@@ -1,12 +1,12 @@
 import { useState } from "react";
-
+import useCountrySearch from "./useCountrySearch";
 import { useAlertGlobalContext } from "../context/AlertContext";
 
 const useSearch = () => {
   const [text, setText] = useState("");
 
- 
   const { setAlert } = useAlertGlobalContext();
+  const { countrySearch } = useCountrySearch();
 
   const onChange = (e) => setText(e.target.value);
 
@@ -15,7 +15,7 @@ const useSearch = () => {
     if (text === "") {
       setAlert(" pleas enter a any keywords ", "warning");
     } else {
-      const res = await searchUsers(text);
+      const res = await countrySearch(text);
 
       setText("");
 

@@ -1,4 +1,4 @@
-import { ALERT_ACTIONS } from "../actions";
+import { ALERT_ACTIONS } from "./actions";
 
 export default (state, action) => {
   const { type, payload } = action;

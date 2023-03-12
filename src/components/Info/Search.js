@@ -1,5 +1,5 @@
-import useSearch from "/src/hooks/useSearch.js";
-import useCountrySearch from "/src/hooks/useCountrySearch";
+import useSearch from "../../hooks/useSearch";
+import useCountrySearch from "../../hooks/useCountrySearch.js";
 
 const Search = () => {
   const { country, clearCountry } = useCountrySearch();
