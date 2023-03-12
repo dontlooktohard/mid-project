@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Login() {
+function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -90,4 +90,4 @@ function Register() {
   );
 }
 
-export { Login, Register };
+export default { LogIn, Register };

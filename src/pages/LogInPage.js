@@ -1,13 +1,13 @@
 import React from "react";
-import { Login, Register } from "./auth";
+import { LogIn, Register } from "../components/layout/LogIn";
 
-function App() {
+function LogInPage() {
   return (
     <div>
-      <Login />
+      <LogIn />
       <Register />
     </div>
   );
 }
 
-export default App;
+export default LogInPage;
