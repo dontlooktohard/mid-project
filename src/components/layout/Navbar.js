@@ -19,15 +19,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="/DiveLog"
-              className={({ isActive }) => (isActive ? "link active" : "link")}
-            >
-              Dive Log
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/DivePlan"
+              to="/divePlan"
               className={({ isActive }) => (isActive ? "link active" : "link")}
             >
               Dive Plan
@@ -35,7 +27,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="/LogIn"
+              to="/logIn"
               className={({ isActive }) => (isActive ? "link active" : "link")}
             >
               Log In

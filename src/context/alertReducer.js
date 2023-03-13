@@ -1,6 +1,8 @@
 import { ALERT_ACTIONS } from "./actions";
 
-export default (state, action) => {
+
+
+const alertReducer = (state, action) => {
   const { type, payload } = action;
   switch (type) {
     case ALERT_ACTIONS.SET_ALERT:
@@ -11,3 +13,5 @@ export default (state, action) => {
       return state;
   }
 };
+
+export default alertReducer;

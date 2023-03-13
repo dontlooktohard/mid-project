@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { SharedLayout } from "./components";
+import SharedLayout from "./components/layout/SharedLayout";
 import { Home, DivePlan, NotFound, LogInPage } from "./pages";
 
 const App = () => {
@@ -10,8 +10,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<Home />} />
-            <Route path="DivePlan" element={<DivePlan />} />
-            <Route path="LogIn" element={<LogInPage />} />
+            <Route path="/divePlan" element={<DivePlan />} />
+            <Route path="/logIn" element={<LogInPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
