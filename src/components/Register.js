@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-function LogIn() {
+const Register = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userStats, setUserStats] = useState({});
+
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -18,44 +21,32 @@ function LogIn() {
     event.preventDefault();
   };
 
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    if (user) {
-      setIsLoggedIn(true);
-      setUserStats(user);
-    }
-  }, []);
-
   return (
     <div>
-      <h1>Login</h1>
-      {isLoggedIn ? (
-        <div>
-          <p>Logged in as {userStats.name}</p>
-          <p>Email: {userStats.email}</p>
-          <p>Password: {userStats.password}</p>
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <label>
-            Email:
-            <input type="email" value={email} onChange={handleEmailChange} />
-          </label>
-          <br />
-          <label>
-            Password:
-            <input
-              type="password"
-              value={password}
-              onChange={handlePasswordChange}
-            />
-          </label>
-          <br />
-          <button type="submit">Login</button>
-        </form>
-      )}
+      <h1>Register</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Name:
+          <input type="text" value={name} onChange={handleNameChange} />
+        </label>
+        <br />
+        <label>
+          Email:
+          <input type="email" value={email} onChange={handleEmailChange} />
+        </label>
+        <br />
+        <label>
+          Password:
+          <input
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+          />
+        </label>
+        <br />
+        <button type="submit">Register</button>
+      </form>
     </div>
   );
-}
-
-export default LogIn;
+};
+export default Register;

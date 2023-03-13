@@ -84,17 +84,24 @@ function FishCard() {
           backgroundColor: "rgba(13, 14, 18, 0.60)",
         }}
       >
-        <CardHeader title="Fish" subheader={fishResults[0].name} />
-        <CardMedia
-          component="img"
-          height="194"
-          image={fishResults[0].img_src_set["2x"]}
-          alt="vodka gimlet"
-          sx={{
-            width: "299px",
-            height: "200px",
-          }}
-        />
+        {fishResults.length > 0 && (
+          <>
+            <CardHeader
+              title="Fish"
+              subheader={fishResults[0]?.name || "sub"}
+            />
+            <CardMedia
+              component="img"
+              height="194"
+              image={fishResults[0].img_src_set["2x"]}
+              alt="fish"
+              sx={{
+                width: "299px",
+                height: "200px",
+              }}
+            />
+          </>
+        )}
         <CardContent>
           <Typography variant="body2" color="text.secondary"></Typography>
         </CardContent>
